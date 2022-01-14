@@ -1,7 +1,31 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
-  content: [],
+  content: [
+    "./pages/**/*{ts,tsx}",
+    "./components/**/*{ts,tsx}"
+  ],
   theme: {
-    extend: {},
+    extend: {
+      borderWidth: {
+        '1': '1px',
+      },
+    },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addBase, addComponents, addUtilities, theme }) {
+      addComponents({
+        '.flex-center': {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContet: 'center',
+        },
+        '.flex-split': {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContet: 'space-between',
+        },
+      })
+    })
+  ],
 }
