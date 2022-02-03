@@ -1,0 +1,7 @@
+.Container {
+  @apply p-4 max-w-aside h-screen flex flex-col items-center;
+}
+
+.Wrap {
+  @apply flex-center flex-col;
+}
